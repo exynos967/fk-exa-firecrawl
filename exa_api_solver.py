@@ -25,7 +25,7 @@ _SAVE_FILE = os.path.join(_HERE, "exa-keys.txt")
 _SAVE_LOCK = threading.Lock()
 
 _EXA_SITEKEY = "0x4AAAAAADSpJWQOnICEKAwx"
-_EXA_PROMO_CODE = "EXA50API"
+_EXA_PROMO_CODES = ("EXA50API", "EXA50BUILDCLUB")
 _TURNSTILE_ACTION = "auth_signin"
 _AUTH_BASE = "https://auth.exa.ai"
 _AUTH_URL = "https://auth.exa.ai/?callbackUrl=https%3A%2F%2Fdashboard.exa.ai%2F"
@@ -305,7 +305,7 @@ def _complete_onboarding(session):
     return False
 
 
-def _redeem_promo_code(session, code=_EXA_PROMO_CODE):
+def _redeem_promo_code(session, code):
     print(f"🎁 兑换: {code}")
     for m, p, b in [
         ("POST", "/api/redeem", {"code": code}),
@@ -435,7 +435,8 @@ def register_with_api(email, password):
         if verify_result:
             auth_flow_completed = True
             _complete_onboarding(session)
-            _redeem_promo_code(session)
+            for code in _EXA_PROMO_CODES:
+                _redeem_promo_code(session, code)
             api_key = _get_or_create_api_key(session)
 
     if not api_key:
