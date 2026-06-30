@@ -1,7 +1,5 @@
 # API Key Generator - Multi-Service Edition
 
-[English Guide](./README_EN.md)
-
 这是一个多服务注册器与聚合 API 上游工具，聚焦三件事：
 
 - 注册 `Firecrawl` / `Exa` key
@@ -9,7 +7,7 @@
 
 ## 当前状态
 
-- `Firecrawl`：可用
+- `Firecrawl`：不可用,请使用https://github.com/rianilham28/wowow-fc
 - `Exa`：可用
 
 ## Quick Start
@@ -17,8 +15,8 @@
 ### 1. Clone
 
 ```bash
-git clone https://github.com/skernelx/tavily-key-generator.git
-cd tavily-key-generator
+git clone https://github.com/exynos967/fk-exa-firecrawl
+cd fk-exa-firecrawl
 ```
 
 ### 2. Configure
