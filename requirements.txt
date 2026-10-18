@@ -1,4 +1,4 @@
 curl_cffi==0.15.0
 psutil==7.1.0
-requests==2.32.5
+requests==2.33.0
 rich==14.3.3
